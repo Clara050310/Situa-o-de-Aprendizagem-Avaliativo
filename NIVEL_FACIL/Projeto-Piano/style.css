@@ -1,54 +1,75 @@
+/* Resetando margin, padding e definindo a box-sizing para todos os elementos */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', sans-serif; /* Fonte utilizada para o projeto */
 }
+
+/* Corpo da página com o fundo e alinhamento centralizado */
 body {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  background: #E3F2FD;
+  background: #E3F2FD; /* Cor de fundo da página */
 }
+
+/* Wrapper para envolver o conteúdo do piano */
 .wrapper {
   padding: 35px 40px;
   border-radius: 20px;
-  background: #141414;
+  background: #141414; /* Cor de fundo do piano */
 }
+
+/* Estilo do cabeçalho com os controles */
 .wrapper header {
   display: flex;
   color: #B2B2B2;
   align-items: center;
   justify-content: space-between;
 }
+
+/* Estilo do título "PIANO" */
 header h2 {
   font-size: 1.6rem;
 }
+
+/* Estilo das colunas para os controles de volume e checkbox */
 header .column {
   display: flex;
   align-items: center;
 }
+
+/* Estilo do texto que acompanha os controles */
 header span {
   font-weight: 500;
   margin-right: 15px;
   font-size: 1.19rem;
 }
+
+/* Estilo dos inputs (controle de volume e checkbox) */
 header input {
   outline: none;
   border-radius: 30px;
 }
+
+/* Estilo específico para o slider de volume */
 .volume-slider input {
   accent-color: #fff;
 }
+
+/* Estilo para o checkbox de mostrar/ocultar teclas */
 .keys-checkbox input {
   height: 30px;
   width: 60px;
   cursor: pointer;
   appearance: none;
   position: relative;
-  background: #4B4B4B
+  background: #4B4B4B;
 }
+
+/* Estilo do "pino" do checkbox */
 .keys-checkbox input::before {
   content: "";
   position: absolute;
@@ -61,44 +82,55 @@ header input {
   transform: translateY(-50%);
   transition: all 0.3s ease;
 }
+
+/* Estilo quando o checkbox está ativado (mostrando teclas) */
 .keys-checkbox input:checked::before {
   left: 35px;
   background: #fff;
 }
+
+/* Lista de teclas do piano */
 .piano-keys {
   display: flex;
   list-style: none;
   margin-top: 40px;
 }
+
+/* Estilo das teclas (brancas e pretas) */
 .piano-keys .key {
   cursor: pointer;
   user-select: none;
   position: relative;
   text-transform: uppercase;
 }
+
+/* Estilo das teclas pretas */
 .piano-keys .black {
   z-index: 2;
   width: 44px;
   height: 140px;
   margin: 0 -22px 0 -22px;
-  border-radius: 0 0 5px 5px;
   background: linear-gradient(#333, #000);
 }
+
+/* Efeito quando a tecla preta é pressionada */
 .piano-keys .black.active {
-  box-shadow: inset -5px -10px 10px rgba(255,255,255,0.1);
   background:linear-gradient(to bottom, #000, #434343);
 }
+
+/* Estilo das teclas brancas */
 .piano-keys .white {
   height: 230px;
   width: 70px;
-  border-radius: 8px;
-  border: 1px solid #000;
   background: linear-gradient(#fff 96%, #eee 4%);
 }
+
+/* Efeito quando a tecla branca é pressionada */
 .piano-keys .white.active {
-  box-shadow: inset -5px 5px 20px rgba(0,0,0,0.2);
   background:linear-gradient(to bottom, #fff 0%, #eee 100%);
 }
+
+/* Estilo das letras nas teclas */
 .piano-keys .key span {
   position: absolute;
   bottom: 20px;
@@ -107,23 +139,25 @@ header input {
   font-size: 1.13rem;
   text-align: center;
 }
+
+/* Estilo quando as teclas são ocultadas */
 .piano-keys .key.hide span {
   display: none;
 }
+
+/* Estilo das teclas pretas (com letras mais escuras) */
 .piano-keys .black span {
   bottom: 13px;
   color: #888888;
 }
 
+/* Estilo responsivo para telas pequenas */
 @media screen and (max-width: 815px) {
   .wrapper {
     padding: 25px;
   }
   header {
     flex-direction: column;
-  }
-  header :where(h2, .column) {
-    margin-bottom: 13px;
   }
   .volume-slider input {
     max-width: 100px;
@@ -137,7 +171,6 @@ header input {
   .piano-keys .black {
     height: 100px;
     width: 40px;
-    margin: 0 -20px 0 -20px;
   }
   .piano-keys .white {
     height: 180px;
@@ -145,15 +178,4 @@ header input {
   }
 }
 
-@media screen and (max-width: 615px) {
-  .piano-keys .key:nth-child(13),
-  .piano-keys .key:nth-child(14),
-  .piano-keys .key:nth-child(15),
-  .piano-keys .key:nth-child(16),
-  .piano-keys .key :nth-child(17) {
-    display: none;
-  }
-  .piano-keys .white {
-    width: 50px;
-  }
-}
+/* Estilo responsivo para telas ainda menores */

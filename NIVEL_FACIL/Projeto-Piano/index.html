@@ -3,22 +3,33 @@
   <head>
     <meta charset="utf-8">
     <title>Piano_Simples</title>
+    <!-- Link para o arquivo de estilo CSS -->
     <link rel="stylesheet" href="style.css">
+    <!-- Configura a responsividade da página -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Inclui o arquivo JavaScript (de forma assíncrona) -->
     <script src="script.js" defer></script>
   </head>
   <body>
     <div class="wrapper">
+      <!-- Cabeçalho com o título do piano e os controles -->
       <header>
         <h2>PIANO</h2>
         <div class="column volume-slider">
-          <span>Volume</span><input type="range" min="0" max="1" value="0.5" step="any">
+          <span>Volume</span>
+          <!-- Controle de volume (slider) -->
+          <input type="range" min="0" max="1" value="0.5" step="any">
         </div>
         <div class="column keys-checkbox">
-          <span>Show Keys</span><input type="checkbox" checked>
+          <span>Show Keys</span>
+          <!-- Checkbox para esconder ou mostrar as teclas -->
+          <input type="checkbox" checked>
         </div>
       </header>
+
+      <!-- Lista de teclas do piano -->
       <ul class="piano-keys">
+        <!-- Teclas brancas -->
         <li class="key white" data-key="a"><span>a</span></li>
         <li class="key black" data-key="w"><span>w</span></li>
         <li class="key white" data-key="s"><span>s</span></li>
