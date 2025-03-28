@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico do Temporizador</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Histórico do Temporizador</h1>
+        <ul id="history"></ul>
+        <div class="actions">
+            <a href="index.html">Voltar para a Página Principal</a>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const historyList = document.getElementById("history");
+            const history = JSON.parse(localStorage.getItem("timerHistory")) || [];
+
+            history.forEach(entry => {
+                const listItem = document.createElement("li");
+                listItem.textContent = entry;
+                historyList.appendChild(listItem);
+            });
+        });
+    </script>
+</body>
+</html>
